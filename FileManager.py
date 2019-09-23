@@ -2,10 +2,10 @@ import csv
 import os
 import re
 import string
-from operator import itemgetter
+from pathlib import Path
 import StopwordRemover as sr
 
-def get_dataset(path_full_dataset, path_simplified_dataset):
+def get_dataset(path_full_dataset):
     files = []
     # r = root, d = directories, f = files
     for r, d, f in os.walk(path_full_dataset):
@@ -33,7 +33,7 @@ def clean_strings(strings):
     return strings
 
 def read_raw_dataset(file, clean=True):
-    f = open(file, "r", encoding='utf-8')
+    f = open(Path(file), "r", encoding='utf-8')
     # Read the content
     contents = f.read()
     # Remove HTML tag
@@ -42,9 +42,21 @@ def read_raw_dataset(file, clean=True):
     return contents
 
 def save_word_freq(word_freq):
-    if not os.path.exists('word_frequency'):
+    if not os.path.exists('model/word_frequency'):
         os.makedirs("word_frequency")
-    with open('word_frequency/word_freq.tsv', mode='w', newline='', encoding='utf-8') as file:
+    with open('model/word_frequency/word_freq.tsv.bak', mode='w', newline='', encoding='utf-8') as file:
         writer = csv.writer(file, delimiter='\t', quotechar='"', quoting=csv.QUOTE_MINIMAL)
         for key in sorted(word_freq):
             writer.writerow([key, word_freq[key]])
+
+def load_word_freq(model_path):
+    if not os.path.isfile(model_path):
+        message = "Model not found, is path correct? (Current Settings: "+model_path+")"
+        raise FileNotFoundError(message)
+    else:
+        word_freq_temp = {}
+        with open(model_path) as csv_file:
+            for row in csv_file:
+                (key, val) = row.split()
+                word_freq_temp[str(key)] = int(val)
+    return word_freq_temp

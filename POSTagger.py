@@ -1,3 +1,4 @@
+# Coba POS tagger lain.
 from nltk.tag import CRFTagger
 import re
 
@@ -30,5 +31,5 @@ def train_pos_tag(dataset_dir, output_path):
 def tag_strings(path_to_model, tokenized_string):
     ct = CRFTagger()
     ct.set_model_file(path_to_model)
-    tagged_strings = ct.tag_sents([['Saya', 'bekerja', 'di', 'Bandung'], ['Nama', 'saya', 'Yudi']])
+    tagged_strings = ct.tag_sents([tokenized_string])
     return tagged_strings

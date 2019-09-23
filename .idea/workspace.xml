@@ -1,7 +1,563 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="975a12a7-c884-42d0-8c1b-63d67e314dc4" name="Default Changelist" comment="" />
+    <list default="true" id="975a12a7-c884-42d0-8c1b-63d67e314dc4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/SyntacticSimplifier.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wrapper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Project_TA.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Project_TA.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FileManager.py" beforeDir="false" afterPath="$PROJECT_DIR$/FileManager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LexicalSimplifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/LexicalSimplifier.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/POSTagger.py" beforeDir="false" afterPath="$PROJECT_DIR$/POSTagger.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_00" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_01" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_02" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_03" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_04" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_05" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_06" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_07" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_08" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_09" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_10" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_11" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_12" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_13" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_14" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_15" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_16" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_17" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_18" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_19" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_20" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_21" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_22" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_23" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_24" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_25" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_26" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_27" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_28" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_29" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_30" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_31" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_32" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_33" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_34" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_35" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_36" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_37" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_38" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_39" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_40" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_41" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_42" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_43" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_44" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_45" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_46" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_47" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_48" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_49" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_50" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_51" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_52" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_53" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_54" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_55" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_56" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_57" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_58" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_59" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_60" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_61" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_62" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_63" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_64" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_65" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_66" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_67" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_68" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_69" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_70" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_71" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_72" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_73" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_74" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_75" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_76" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_77" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_78" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_79" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_80" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_81" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_82" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_83" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_84" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_85" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_86" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_87" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_88" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_89" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_90" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_91" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_92" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_93" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_94" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_95" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_96" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_97" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_98" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AA/wiki_99" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_00" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_01" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_02" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_03" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_04" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_05" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_06" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_07" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_08" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_09" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_10" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_11" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_12" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_13" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_14" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_15" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_16" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_17" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_18" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_19" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_20" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_21" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_22" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_23" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_24" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_25" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_26" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_27" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_28" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_29" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_30" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_31" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_32" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_33" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_34" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_35" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_36" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_37" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_38" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_39" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_40" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_41" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_42" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_43" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_44" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_45" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_46" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_47" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_48" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_49" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_50" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_51" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_52" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_53" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_54" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_55" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_56" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_57" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_58" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_59" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_60" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_61" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_62" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_63" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_64" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_65" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_66" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_67" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_68" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_69" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_70" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_71" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_72" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_73" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_74" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_75" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_76" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_77" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_78" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_79" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_80" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_81" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_82" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_83" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_84" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_85" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_86" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_87" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_88" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_89" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_90" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_91" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_92" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_93" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_94" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_95" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_96" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_97" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_98" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AB/wiki_99" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_00" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_01" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_02" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_03" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_04" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_05" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_06" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_07" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_08" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_09" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_10" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_11" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_12" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_13" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_14" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_15" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_16" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_17" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_18" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_19" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_20" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_21" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_22" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_23" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_24" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_25" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_26" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_27" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_28" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_29" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_30" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_31" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_32" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_33" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_34" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_35" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_36" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_37" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_38" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_39" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_40" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_41" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_42" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_43" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_44" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_45" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_46" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_47" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_48" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_49" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_50" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_51" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_52" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_53" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_54" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_55" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_56" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_57" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_58" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_59" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_60" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_61" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_62" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_63" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_64" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_65" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_66" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_67" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_68" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_69" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_70" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_71" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_72" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_73" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_74" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_75" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_76" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_77" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_78" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_79" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_80" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_81" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_82" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_83" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_84" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_85" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_86" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_87" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_88" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_89" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_90" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_91" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_92" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_93" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_94" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_95" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_96" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_97" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_98" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AC/wiki_99" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_00" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_01" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_02" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_03" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_04" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_05" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_06" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_07" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_08" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_09" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_10" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_11" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_12" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_13" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_14" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_15" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_16" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_17" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_18" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_19" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_20" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_21" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_22" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_23" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_24" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_25" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_26" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_27" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_28" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_29" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_30" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_31" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_32" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_33" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_34" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_35" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_36" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_37" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_38" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_39" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_40" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_41" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_42" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_43" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_44" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_45" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_46" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_47" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_48" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_49" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_50" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_51" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_52" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_53" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_54" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_55" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_56" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_57" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_58" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_59" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_60" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_61" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_62" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_63" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_64" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_65" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_66" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_67" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_68" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_69" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_70" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_71" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_72" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_73" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_74" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_75" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_76" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_77" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_78" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_79" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_80" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_81" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_82" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_83" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_84" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_85" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_86" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_87" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_88" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_89" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_90" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_91" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_92" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_93" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_94" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_95" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_96" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_97" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_98" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AD/wiki_99" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_00" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_01" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_02" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_03" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_04" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_05" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_06" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_07" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_08" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_09" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_10" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_11" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_12" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_13" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_14" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_15" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_16" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_17" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_18" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_19" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_20" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_21" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_22" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_23" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_24" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_25" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_26" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_27" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_28" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_29" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_30" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_31" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_32" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_33" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_34" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_35" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_36" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_37" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_38" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_39" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_40" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_41" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_42" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_43" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_44" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_45" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_46" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_47" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_48" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_49" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_50" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_51" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_52" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_53" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_54" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_55" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_56" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_57" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_58" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_59" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_60" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_61" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_62" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_63" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_64" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_65" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_66" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_67" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_68" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_69" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_70" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_71" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_72" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_73" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_74" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_75" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_76" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_77" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_78" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_79" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_80" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_81" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_82" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_83" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_84" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_85" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_86" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_87" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_88" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_89" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_90" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_91" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_92" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_93" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_94" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_95" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_96" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_97" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_98" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AE/wiki_99" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AF/wiki_00" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AF/wiki_01" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AF/wiki_02" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AF/wiki_03" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AF/wiki_04" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AF/wiki_05" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AF/wiki_06" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AF/wiki_07" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AF/wiki_08" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AF/wiki_09" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AF/wiki_10" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AF/wiki_11" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AF/wiki_12" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AF/wiki_13" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AF/wiki_14" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AF/wiki_15" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AF/wiki_16" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AF/wiki_17" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AF/wiki_18" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AF/wiki_19" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AF/wiki_20" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AF/wiki_21" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AF/wiki_22" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AF/wiki_23" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AF/wiki_24" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AF/wiki_25" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AF/wiki_26" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AF/wiki_27" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AF/wiki_28" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AF/wiki_29" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AF/wiki_30" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AF/wiki_31" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AF/wiki_32" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AF/wiki_33" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AF/wiki_34" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AF/wiki_35" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AF/wiki_36" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AF/wiki_37" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AF/wiki_38" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AF/wiki_39" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AF/wiki_40" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AF/wiki_41" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AF/wiki_42" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/full/AF/wiki_43" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/simplifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/simplifier.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/word_frequency/word_freq.tsv" beforeDir="false" afterPath="$PROJECT_DIR$/model/word_frequency/word_freq.tsv.bak" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,14 +571,26 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1Q3J0beiKV6oCKBbPEev5mkvwBx" />
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/model/word_frequency" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/model/word_frequency" />
+      <recent name="$PROJECT_DIR$/sensegram" />
+      <recent name="$PROJECT_DIR$/sensegram/model" />
+      <recent name="$PROJECT_DIR$" />
       <recent name="C:\Users\Satrio Wibowo\PycharmProjects\Project_TA" />
-      <recent name="C:\Users\Satrio Wibowo\PycharmProjects\Project_TA\dataset\POSTag" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/model/word_frequency" />
+      <recent name="$PROJECT_DIR$/model" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -37,7 +605,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.simplifier">
+  <component name="RunManager" selected="Python.wrapper">
     <configuration name="POSTagger" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Project_TA" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -101,8 +669,30 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="wrapper" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Project_TA" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/wrapper.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.wrapper" />
         <item itemvalue="Python.simplifier" />
         <item itemvalue="Python.POSTagger" />
         <item itemvalue="Python.StopwordRemover" />
@@ -121,5 +711,29 @@
       <updated>1566993125599</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
