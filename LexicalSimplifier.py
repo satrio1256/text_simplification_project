@@ -55,25 +55,25 @@ def lexical_simplify(sv_model, wv_model, word_freq_model, raw_sentences, min_thr
         if str.lower(word) in word_freq.keys() and word_freq[str.lower(word)] < min_threshold:
             complex_words[word] = word_freq[str.lower(word)]
 
-    print(complex_words)
+    print("Complex Word", complex_words)
 
     replaced_words = {}
     for c_word, freq_val in complex_words.items():
-        print("Probabilities of the senses:\n{}\n\n".format(sv_model.get_senses(str(c_word), ignore_case=True)))
+        # print("Probabilities of the senses:\n{}\n\n".format(sv_model.get_senses(str(c_word), ignore_case=True)))
 
-        for sense_id, prob in sv_model.get_senses(str(c_word), ignore_case=True):
-            print(sense_id)
-            print("=" * 20)
-            # rsense_id --> bentuknya kata_asal#no_id
-            # sim --> persentase similarity dalam range 0-1
-
-            for rsense_id, sim in sv_model.wv.most_similar(sense_id):
-                print("{} {:f}".format(rsense_id, sim))
-            print("\n")
-
-        # Disambiguate a word in a context
+        # for sense_id, prob in sv_model.get_senses(str(c_word), ignore_case=True):
+        #     print(sense_id)
+        #     print("=" * 20)
+        #     # rsense_id --> bentuknya kata_asal#no_id
+        #     # sim --> persentase similarity dalam range 0-1
+        #
+        #     for rsense_id, sim in sv_model.wv.most_similar(sense_id):
+        #         print("{} {:f}".format(rsense_id, sim))
+        #     print("\n")
+        #
+        # # Disambiguate a word in a context
         wsd_model = WSD(sv_model, wv_model, window=5, max_context_words=3, method='sim', ignore_case=True)
-        print(wsd_model.disambiguate(raw_sentences, str(c_word)))
+        # print(wsd_model.disambiguate(raw_sentences, str(c_word)))
 
         replaced_words[str.lower(c_word)] = sv_model.wv.most_similar(wsd_model.disambiguate(raw_sentences, str(c_word))[0])
 
@@ -82,16 +82,19 @@ def lexical_simplify(sv_model, wv_model, word_freq_model, raw_sentences, min_thr
         replacement, sep, tail = replaced_words[key][0][0].partition('#')
         if get_word_freq(replacement, word_freq) > get_word_freq(key, word_freq):
             # Select Highest
+            print(replacement)
             replaced_words[key] = replacement
+        else:
+            replaced_words[key] = key
         # for new_word in replaced_words[key]:
         #     # (before #, '#', after '#')
         #     replacement, sep, tail = new_word[0].partition('#')
         #     # print(replaced_words[key])
         #     print(replacement, ls.get_word_freq(replacement, word_freq))
 
-        print(replaced_words)
+    print(replaced_words)
 
     for old_word, new_word in replaced_words.items():
-        raw_sentences = re.sub(old_word, new_word, raw_sentences)
+        raw_sentences = re.sub(old_word, new_word, raw_sentences, flags=re.IGNORECASE)
 
     return raw_sentences

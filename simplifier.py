@@ -6,15 +6,16 @@ import os
 import time
 from sensegram import sensegram
 
+path_rule_syntactic = 'dataset/syntactic_rules/rule_syntactic.tsv'
 path_full_dataset = 'dataset/full'
 path_postag_dataset = 'dataset/POSTag/Indonesian_Manually_Tagged_Corpus_ID.tsv'
 path_tag_model = 'model/all_indo_man_tag_corpus_model.crf.tagger'
-path_word_frequency_tsv = 'model/word_frequency/word_freq.tsv.bak'
+path_word_frequency_tsv = 'model/word_frequency/word_freq.tsv'
 sense_vectors_fpath = 'sensegram/model/idwiki-latest.n200.clusters.minsize5-1000-sum-score-20.sense_vectors'
 word_vectors_fpath = 'sensegram/model/idwiki-latest.cbow1-size300-window5-iter5-mincount10-bigramsFalse.word_vectors'
 
 # Variables
-freq_min_threshold = 1500       # Dilihat distribusi frekuensi katanya? Plotter confusing :(
+freq_min_threshold = 750       # Dilihat distribusi frekuensi katanya? Plotter confusing :(
 
 def trainLexical():
     files = fm.get_dataset(path_full_dataset)
@@ -34,6 +35,10 @@ def trainLexical():
     time_stop = time.perf_counter()
     print("Counting Complete, time elapsed", time_stop-time_start, 'seconds')
 
+def loadSyntactic():
+    print("Loading Syntactic Rules")
+    return ss.load_rule(path_rule_syntactic)
+
 def loadSense():
     # Load sense_vector
     print("Loading Sense Vector")
@@ -46,18 +51,32 @@ def loadWord2Vec():
 
 def calculate(sv, wv):
     # Word to process
-    sentences = "Kandang adalah struktur atau bangunan tempat hewan ternak dipelihara. Kandang seringkali dikategorikan menurut jumlah hewan yang menempatinya; ada yang hanya berupa satu bangunan satu hewan, satu bangunan banyak hewan namun terpisah oleh sekat, dan satu bangunan diisi banyak hewan tanpa sekat."
+    # sentences = "Kandang adalah struktur atau bangunan tempat hewan ternak dipelihara. Kandang seringkali dikategorikan menurut jumlah hewan yang menempatinya; ada yang hanya berupa satu bangunan satu hewan, satu bangunan banyak hewan namun terpisah oleh sekat, dan satu bangunan diisi banyak hewan tanpa sekat."
 
-    new_sentences = ls.lexical_simplify(sv_model=sv,
+    # sentences = "Aldi sedang membaca buku di teras rumah ketika ibu memasak sayur"
+    # sentences = "Bandi memancing ikan di sungai bersama ayahnya dan keduanya pulang ke rumah hingga larut malam."
+    # sentences = "Irfan tidur saat pelajaran di kelas sedang berlangsung dan Toni membangunkannya."
+    # sentences = "Gilang makan gorengan di teras rumah sore tadi kemudian ayah ikut memakannya."
+    # sentences = "Heru menyeberang dengan sangat hati – hati di jalan raya lalu memesan taksi secara online"
+    sentences = "Wahyu anak orang kaya raya tetapi dia tidak sombong kepada orang lain. Heru menyeberang dengan sangat hati – hati di jalan raya lalu memesan taksi secara online"
+
+    # print(pt.tag_strings(path_tag_model, ss.tokenize_strings(sentences)))
+    # raise Exception
+
+    lexical_simplified = ls.lexical_simplify(sv_model=sv,
                                         wv_model=wv,
                                         word_freq_model=path_word_frequency_tsv,
                                         raw_sentences=sentences,
                                         min_threshold=freq_min_threshold)
 
-    new_sentences = ss.syntactic_simplify()
-
-    print(new_sentences)
-
+    rules = loadSyntactic()
+    syntactic_simplified = ss.syntactic_simplify(lexical_simplified, path_tag_model, rules)
+    print("Old:", sentences)
+    print()
+    print("Lexical Simplified:", lexical_simplified)
+    print()
+    print("Syntactic Simplified:", syntactic_simplified)
+    print()
 
 def trainPOSTag():
     pt.train_pos_tag(path_postag_dataset, path_tag_model)

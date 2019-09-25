@@ -41,10 +41,10 @@ def read_raw_dataset(file, clean=True):
         contents = clean_strings(contents)
     return contents
 
-def save_word_freq(word_freq):
+def save_word_freq(word_freq, word_model):
     if not os.path.exists('model/word_frequency'):
         os.makedirs("word_frequency")
-    with open('model/word_frequency/word_freq.tsv.bak', mode='w', newline='', encoding='utf-8') as file:
+    with open(word_model, mode='w', newline='', encoding='utf-8') as file:
         writer = csv.writer(file, delimiter='\t', quotechar='"', quoting=csv.QUOTE_MINIMAL)
         for key in sorted(word_freq):
             writer.writerow([key, word_freq[key]])

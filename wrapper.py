@@ -23,8 +23,7 @@ if __name__ == "__main__":
             raise
         except Exception as e:
             logging.error(traceback.format_exc())
-        print("Press enter to relaunch the script, CTRL-C to exit")
-        sys.stdin.readline()
+        input("Press enter to relaunch the script, CTRL-C to exit")
         print("Loading FileManager")
         importlib.reload(FileManager)
         print("Loading LexicalSimplifier")
