@@ -3,7 +3,6 @@ import nltk
 import POSTagger as pt
 import os
 import time
-nltk.download('punkt')
 
 def tokenize_strings(strings):
     return nltk.tokenize.word_tokenize(strings)

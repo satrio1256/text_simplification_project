@@ -4,7 +4,14 @@ import LexicalSimplifier as ls
 import SyntacticSimplifier as ss
 import os
 import time
+import nltk
 from sensegram import sensegram
+
+# Prepare NLTK
+try:
+    nltk.data.find('tokenizers/punkt')
+except LookupError:
+    nltk.download('punkt')
 
 path_rule_syntactic = 'dataset/syntactic_rules/rule_syntactic.tsv'
 path_full_dataset = 'dataset/full'
@@ -58,7 +65,7 @@ def calculate(sv, wv):
     # sentences = "Irfan tidur saat pelajaran di kelas sedang berlangsung dan Toni membangunkannya."
     # sentences = "Gilang makan gorengan di teras rumah sore tadi kemudian ayah ikut memakannya."
     # sentences = "Heru menyeberang dengan sangat hati – hati di jalan raya lalu memesan taksi secara online"
-    sentences = "Wahyu anak orang kaya raya tetapi dia tidak sombong kepada orang lain. Heru menyeberang dengan sangat hati – hati di jalan raya lalu memesan taksi secara online"
+    sentences = "Rani anak orang kaya raya tetapi dia tidak sombong kepada orang lain. Heru menyeberang dengan sangat hati – hati di jalan raya lalu pesan taksi secara online"
 
     # print(pt.tag_strings(path_tag_model, ss.tokenize_strings(sentences)))
     # raise Exception
@@ -66,6 +73,7 @@ def calculate(sv, wv):
     lexical_simplified = ls.lexical_simplify(sv_model=sv,
                                         wv_model=wv,
                                         word_freq_model=path_word_frequency_tsv,
+                                        pos_tag_model=path_tag_model,
                                         raw_sentences=sentences,
                                         min_threshold=freq_min_threshold)
 

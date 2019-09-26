@@ -1,9 +1,9 @@
 import nltk
 import re
 import FileManager as fm
+import POSTagger as pt
 from sensegram import sensegram
 from sensegram.wsd import WSD
-nltk.download('punkt')
 
 def tokenize_strings(strings):
     return nltk.tokenize.word_tokenize(strings)
@@ -39,12 +39,21 @@ def count_word_frequency(strings, word_freq_model = None):
     return word_freq
 
 
-def lexical_simplify(sv_model, wv_model, word_freq_model, raw_sentences, min_threshold):
+def lexical_simplify(sv_model, wv_model, pos_tag_model, word_freq_model, raw_sentences, min_threshold):
     # Load Word Frequencies
     word_freq = fm.load_word_freq(model_path=word_freq_model)
 
+    # POS Tag
+    tagged_sentences = pt.tag_strings(pos_tag_model, tokenize_strings(raw_sentences))[0]
+
+    # Remove NNP from raw_sentences
+    sentences = raw_sentences
+    for word in tagged_sentences:
+        if str(word[1]).upper() == "NNP":
+            sentences = re.sub(str(word[0]), '', sentences, flags=re.IGNORECASE)
+
     # Clean Sentences
-    sentences = fm.clean_strings(raw_sentences)
+    sentences = fm.clean_strings(sentences)
 
     # Tokenize
     sentences = tokenize_strings(sentences)

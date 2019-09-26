@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="975a12a7-c884-42d0-8c1b-63d67e314dc4" name="Default Changelist" comment="Implement Lexical Simplifier">
-      <change afterPath="$PROJECT_DIR$/train_freq.py" afterDir="false" />
+    <list default="true" id="975a12a7-c884-42d0-8c1b-63d67e314dc4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FileManager.py" beforeDir="false" afterPath="$PROJECT_DIR$/FileManager.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LexicalSimplifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/LexicalSimplifier.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SyntacticSimplifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/SyntacticSimplifier.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/word_frequency/word_freq.tsv.bak" beforeDir="false" afterPath="$PROJECT_DIR$/model/word_frequency/word_freq.tsv.bak" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/simplifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/simplifier.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wrapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/wrapper.py" afterDir="false" />
     </list>
@@ -192,7 +189,21 @@
       <option name="project" value="LOCAL" />
       <updated>1569222600639</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Implement Lexical Simplifier">
+      <created>1569432341378</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1569432341378</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Implement Syntactic Simplification (Including previous commit)">
+      <created>1569432438221</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1569432438221</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -210,7 +221,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Implement Lexical Simplifier" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement Lexical Simplifier" />
+    <MESSAGE value="Implement Syntactic Simplification (Including previous commit)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement Syntactic Simplification (Including previous commit)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
