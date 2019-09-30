@@ -17,7 +17,7 @@ path_rule_syntactic = 'dataset/syntactic_rules/rule_syntactic.tsv'
 path_full_dataset = 'dataset/full'
 path_postag_dataset = 'dataset/POSTag/Indonesian_Manually_Tagged_Corpus_ID.tsv'
 path_tag_model = 'model/all_indo_man_tag_corpus_model.crf.tagger'
-path_word_frequency_tsv = 'model/word_frequency/word_freq.tsv'
+path_word_frequency_tsv = 'model/word_frequency/word_freq_new.tsv'
 sense_vectors_fpath = 'sensegram/model/idwiki-latest.n200.clusters.minsize5-1000-sum-score-20.sense_vectors'
 word_vectors_fpath = 'sensegram/model/idwiki-latest.cbow1-size300-window5-iter5-mincount10-bigramsFalse.word_vectors'
 
@@ -58,14 +58,33 @@ def loadWord2Vec():
 
 def calculate(sv, wv):
     # Word to process
+    # LEXICAL ONLY SIMPLIFICATION
     # sentences = "Kandang adalah struktur atau bangunan tempat hewan ternak dipelihara. Kandang seringkali dikategorikan menurut jumlah hewan yang menempatinya; ada yang hanya berupa satu bangunan satu hewan, satu bangunan banyak hewan namun terpisah oleh sekat, dan satu bangunan diisi banyak hewan tanpa sekat."
+
+    # SYNTACTIC ONLY SIMPLIFICATION
+    sentences = "Rani anak orang kaya raya tetapi dia tidak sombong kepada orang lain. Heru menyeberang dengan sangat hati – hati di jalan raya lalu memesan taksi secara online."
+
+    # sentences = "Setelah berbincang-bincang dan membujuk kakaknya, pada akhirnya Hendra sang kakak dengan ikhlas untuk memberikan uang celengannya saat itu kepada adik tercinta."
+
+    # LEXICAL - SYNTACTIC SIMPLIFICATION
+    sentences = "Pesta tersebut akhirnya ricuh dan Angel pun lari dan mengalami kecelakaan. Kecelakaan tersebut menyebabkan tak ada satu orang pun yang bisa menyelamatkan dirinya selain Hendra."
+
+    # LONG SENTENCES
+    # sentences = "Perhelatan bisa kacau tanpa kehadiran lelaki itu. Gulai Kambing akan terasa hambar lantaran racikan bumbu tak meresap ke dalam daging. Kuah Gulai Kentang dan Gulai Rebung bakal encer karena keliru menakar jumlah kelapa parut hingga setiap menu masakan kekurangan santan. Akibatnya, berseraklah gunjing dan cela yang mesti ditanggung tuan rumah, bukan karena kenduri kurang meriah, tidak pula karena pelaminan tempat bersandingnya pasangan pengantin tak sedap dipandang mata, tapi karena macam-macam hidangan yang tersuguh tak menggugah selera. Nasi banyak gulai melimpah, tapi helat tak bikin kenyang. Ini celakanya bila Makaji, juru masak handal itu tak dilibatkan."
+
+    # sentences = "Keterbukaan batik banyuwangi terhadap perwajahan baru, warna dan motif, menunjukkan watak orang Banyuwangi yang sangat percaya diri meramu aneka pengaruh untuk kemudian diakui sebagai identitas diri. Tabrak budaya ini juga terlihat pada ramuan kulinernya, seperti rawon malang dicampur dengan pecel madiun menjadi rawon pecel. Orang Banyuwangi sangat terbuka menerima budaya luar untuk diolah menjadi budaya Banyuwangi. Sinkretisme budaya yang juga tampak di batik banyuwangi ini menjadi sesuatu yang mutlak terjadi karena Banyuwangi hingga kini memang dihuni oleh beragam suku. Kedatangan beragam suku bangsa untuk tinggal menetap di Banyuwangi antara lain dimulai pada penjajahan Belanda. Belanda mendatangkan buruh perkebunan dari Jawa dan Madura."
+
+    # sentences = "Kalau beberapa tahun yang lalu Tuan datang ke kota  kelahiranku  dengan menumpang  bis, Tuan akan berhenti di dekat pasar. Melangkahlah menyusuri jalan raya arah ke barat maka kira-kira sekilometer dari  pasar akan sampailah Tuan di jalan kampungku. Pada simpang  kecil  ke kanan, beloklah  ke jalan sempit itu. Dan di  ujung  jalan itu nanti  Tuan  temukan sebuah  surau  tua. Di depannya  ada  kolam ikan  yang  airnya mengalir melalui empat buah pancuran mandi."
+
+    # sentences = "Begitulah pentingnya Makaji. Tanpa campur tangannya, kenduri terasa hambar, sehambar Gulai Kambing dan Gulai Rebung karena bumbu-bumbu tak diracik oleh tangan dingin lelaki itu. Sejak dulu, Makaji tak pernah keberatan membantu keluarga mana saja yang hendak menggelar pesta, tak peduli apakah tuan rumah hajatan itu orang terpandang yang tamunya membludak atau orang biasa yang hanya sanggup menggelar syukuran seadanya. Makaji tak pilih kasih, meski ia satu-satunya juru masak yang masih tersisa di Lareh Panjang. Di usia senja, ia masih tangguh menahan kantuk, tangannya tetap gesit meracik bumbu, masih kuat ia berjaga semalam suntuk."
 
     # sentences = "Aldi sedang membaca buku di teras rumah ketika ibu memasak sayur"
     # sentences = "Bandi memancing ikan di sungai bersama ayahnya dan keduanya pulang ke rumah hingga larut malam."
     # sentences = "Irfan tidur saat pelajaran di kelas sedang berlangsung dan Toni membangunkannya."
     # sentences = "Gilang makan gorengan di teras rumah sore tadi kemudian ayah ikut memakannya."
     # sentences = "Heru menyeberang dengan sangat hati – hati di jalan raya lalu memesan taksi secara online"
-    sentences = "Rani anak orang kaya raya tetapi dia tidak sombong kepada orang lain. Heru menyeberang dengan sangat hati – hati di jalan raya lalu pesan taksi secara online"
+    # sentences = "Ia tertabrak mobil karena ia kurang hati-hati"
+    # sentences = "Jangan bercakap sembari makan"
 
     # print(pt.tag_strings(path_tag_model, ss.tokenize_strings(sentences)))
     # raise Exception

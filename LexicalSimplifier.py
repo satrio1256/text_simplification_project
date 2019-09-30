@@ -8,9 +8,6 @@ from sensegram.wsd import WSD
 def tokenize_strings(strings):
     return nltk.tokenize.word_tokenize(strings)
 
-def preprocess_tokenized(tokenized_string):
-    return 0
-
 def get_word_freq(word, word_freq_model):
     if word in word_freq_model:
         return word_freq_model[word]
@@ -44,7 +41,10 @@ def lexical_simplify(sv_model, wv_model, pos_tag_model, word_freq_model, raw_sen
     word_freq = fm.load_word_freq(model_path=word_freq_model)
 
     # POS Tag
+    print()
+    print("Lexical Tag")
     tagged_sentences = pt.tag_strings(pos_tag_model, tokenize_strings(raw_sentences))[0]
+    print()
 
     # Remove NNP from raw_sentences
     sentences = raw_sentences
@@ -53,7 +53,8 @@ def lexical_simplify(sv_model, wv_model, pos_tag_model, word_freq_model, raw_sen
             sentences = re.sub(str(word[0]), '', sentences, flags=re.IGNORECASE)
 
     # Clean Sentences
-    sentences = fm.clean_strings(sentences)
+    sentences = fm.clean_strings(sentences, no_stem=True, no_punctuation=False)
+    print("Clean Strings", sentences)
 
     # Tokenize
     sentences = tokenize_strings(sentences)
@@ -84,14 +85,17 @@ def lexical_simplify(sv_model, wv_model, pos_tag_model, word_freq_model, raw_sen
         wsd_model = WSD(sv_model, wv_model, window=5, max_context_words=3, method='sim', ignore_case=True)
         # print(wsd_model.disambiguate(raw_sentences, str(c_word)))
 
-        replaced_words[str.lower(c_word)] = sv_model.wv.most_similar(wsd_model.disambiguate(raw_sentences, str(c_word))[0])
+        try:
+            replaced_words[str.lower(c_word)] = sv_model.wv.most_similar(
+                wsd_model.disambiguate(raw_sentences, str(c_word))[0])
+        except KeyError:
+            replaced_words[str.lower(c_word)] = [(str(c_word+'#1'), 1.00)]
 
     for key, val in replaced_words.items():
         # (before #, '#', after '#')
         replacement, sep, tail = replaced_words[key][0][0].partition('#')
         if get_word_freq(replacement, word_freq) > get_word_freq(key, word_freq):
             # Select Highest
-            print(replacement)
             replaced_words[key] = replacement
         else:
             replaced_words[key] = key

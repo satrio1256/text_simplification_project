@@ -3,10 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="975a12a7-c884-42d0-8c1b-63d67e314dc4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FileManager.py" beforeDir="false" afterPath="$PROJECT_DIR$/FileManager.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LexicalSimplifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/LexicalSimplifier.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/POSTagger.py" beforeDir="false" afterPath="$PROJECT_DIR$/POSTagger.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SyntacticSimplifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/SyntacticSimplifier.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/simplifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/simplifier.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wrapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/wrapper.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,20 +28,20 @@
   <component name="ProjectId" id="1Q3J0beiKV6oCKBbPEev5mkvwBx" />
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/model/word_frequency" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/dataset/syntactic_rules" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/model/word_frequency" />
+      <recent name="$PROJECT_DIR$/model" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/dataset/syntactic_rules" />
       <recent name="$PROJECT_DIR$/model/word_frequency" />
       <recent name="$PROJECT_DIR$/dataset/full" />
       <recent name="$PROJECT_DIR$/sensegram" />
       <recent name="$PROJECT_DIR$/sensegram/model" />
-      <recent name="$PROJECT_DIR$" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/model/word_frequency" />
-      <recent name="$PROJECT_DIR$/model" />
     </key>
   </component>
   <component name="RunDashboard">

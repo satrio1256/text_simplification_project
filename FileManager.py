@@ -13,14 +13,15 @@ def get_dataset(path_full_dataset):
             files.append(os.path.join(r, file))
     return files
 
-def clean_strings(strings):
+def clean_strings(strings, no_stem=False, no_punctuation=True):
     # Remove Wiki Tags
     strings = re.sub('<[^>]*>', '', strings)
-    # Remove hyphen and long hyphen by regex to prevent unexpected merged word after punctuation removal
-    strings = re.sub(r'\b-\b', ' ', strings)
-    strings = re.sub('—', ' ', strings)
-    # Remove Punctuations
-    strings = strings.translate(str.maketrans('', '', string.punctuation))
+    if no_punctuation is True:
+        # Remove hyphen and long hyphen by regex to prevent unexpected merged word after punctuation removal
+        strings = re.sub(r'\b-\b', ' ', strings)
+        strings = re.sub('—', ' ', strings)
+        # Remove Punctuations
+        strings = strings.translate(str.maketrans('', '', string.punctuation))
     # Remove Digits
     strings = strings.translate(str.maketrans('', '', string.digits))
     # print(strings)
@@ -29,7 +30,8 @@ def clean_strings(strings):
     # Remove StopWords
     strings = sr.remove_stopword(strings)
     # Stemming
-    strings = sr.start_stemming(strings)
+    if no_stem is False:
+        strings = sr.start_stemming(strings)
     return strings
 
 def read_raw_dataset(file, clean=True):

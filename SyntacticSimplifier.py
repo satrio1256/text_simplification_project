@@ -15,7 +15,7 @@ def detokenize_strings(tagged_tokenized):
         if idx+1 < len(tagged_tokenized):
             next_token = tagged_tokenized[idx+1]
 
-        if next_token is None or next_token[0] is "." or next_token[0] is ",":
+        if next_token is None or next_token[0] is "." or next_token[0] is "," or next_token[0] is ";":
             sentences += val[0]
         else:
             sentences += val[0] + " "
@@ -87,12 +87,12 @@ def break_sentence(tokenized_sentences, sentence_idx):
     sentence_to_process = tokenized_sentences[sentence_idx[0]:sentence_idx[1]+1]
     return sentence_to_process
 
-def rule_reader(conjunction, rules):
-    return 0
-
 def syntactic_simplify(raw_sentences, tagger_model, rules):
     # Select [0] to remove multiple array from POS Tagger
+    print()
+    print("Syntactic Tag")
     tokenized_sentences = pt.tag_strings(tagger_model, tokenize_strings(raw_sentences))[0]
+    print()
     old_tokenized = tokenized_sentences
     conjunctions = []
     for index, word in enumerate(tokenized_sentences):
@@ -126,21 +126,19 @@ def syntactic_simplify(raw_sentences, tagger_model, rules):
                         break
                 if match_before and match_after:
                     # print("Rule Found!")
+                    sentence_idx = (get_sentence_idx(tokenized_sentences, conjunction[0]))
+                    sentence_to_process = break_sentence(tokenized_sentences, sentence_idx)
+                    tokenized_sentences = tokenized_sentences[0:sentence_idx[0]] + \
+                                          simplify_sentence(sentence=sentence_to_process, sentence_idx=sentence_idx,
+                                                            conj_idx=conjunction[0]) + \
+                                          tokenized_sentences[sentence_idx[1] + 1:len(tokenized_sentences)]
                     break
                 else:
                     continue
                     # print("Rule Not Match for word:", conjunction[1][0])
                     # print("Retrying...")
         except KeyError:
-            # Meaning word is not exist in rule
-            print()
-
-        sentence_idx = (get_sentence_idx(tokenized_sentences, conjunction[0]))
-        sentence_to_process = break_sentence(tokenized_sentences, sentence_idx)
-
-        tokenized_sentences = tokenized_sentences[0:sentence_idx[0]] + \
-                        simplify_sentence(sentence=sentence_to_process, sentence_idx=sentence_idx, conj_idx=conjunction[0]) + \
-                        tokenized_sentences[sentence_idx[1]+1:len(tokenized_sentences)]
+            continue
 
         # print("For conjunction:", conjunction[1][0])
         # print("Old:", detokenize_strings(old_tokenized))
