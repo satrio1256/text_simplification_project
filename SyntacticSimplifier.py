@@ -89,10 +89,10 @@ def break_sentence(tokenized_sentences, sentence_idx):
 
 def syntactic_simplify(raw_sentences, tagger_model, rules):
     # Select [0] to remove multiple array from POS Tagger
-    print()
-    print("Syntactic Tag")
+    # print()
+    # print("Syntactic Tag")
     tokenized_sentences = pt.tag_strings(tagger_model, tokenize_strings(raw_sentences))[0]
-    print()
+    # print()
     old_tokenized = tokenized_sentences
     conjunctions = []
     for index, word in enumerate(tokenized_sentences):

@@ -41,10 +41,10 @@ def lexical_simplify(sv_model, wv_model, pos_tag_model, word_freq_model, raw_sen
     word_freq = fm.load_word_freq(model_path=word_freq_model)
 
     # POS Tag
-    print()
-    print("Lexical Tag")
+    # print()
+    # print("Lexical Tag")
     tagged_sentences = pt.tag_strings(pos_tag_model, tokenize_strings(raw_sentences))[0]
-    print()
+    # print()
 
     # Remove NNP from raw_sentences
     sentences = raw_sentences
@@ -54,7 +54,7 @@ def lexical_simplify(sv_model, wv_model, pos_tag_model, word_freq_model, raw_sen
 
     # Clean Sentences
     sentences = fm.clean_strings(sentences, no_stem=True, no_punctuation=False)
-    print("Clean Strings", sentences)
+    # print("Clean Strings", sentences)
 
     # Tokenize
     sentences = tokenize_strings(sentences)
@@ -71,15 +71,15 @@ def lexical_simplify(sv_model, wv_model, pos_tag_model, word_freq_model, raw_sen
     for c_word, freq_val in complex_words.items():
         # print("Probabilities of the senses:\n{}\n\n".format(sv_model.get_senses(str(c_word), ignore_case=True)))
 
-        # for sense_id, prob in sv_model.get_senses(str(c_word), ignore_case=True):
-        #     print(sense_id)
-        #     print("=" * 20)
-        #     # rsense_id --> bentuknya kata_asal#no_id
-        #     # sim --> persentase similarity dalam range 0-1
-        #
-        #     for rsense_id, sim in sv_model.wv.most_similar(sense_id):
-        #         print("{} {:f}".format(rsense_id, sim))
-        #     print("\n")
+        for sense_id, prob in sv_model.get_senses(str(c_word), ignore_case=True):
+            print(sense_id)
+            print("=" * 20)
+            # rsense_id --> bentuknya kata_asal#no_id
+            # sim --> persentase similarity dalam range 0-1
+
+            for rsense_id, sim in sv_model.wv.most_similar(sense_id):
+                print("{} {:f}".format(rsense_id, sim))
+            print("\n")
         #
         # # Disambiguate a word in a context
         wsd_model = WSD(sv_model, wv_model, window=5, max_context_words=3, method='sim', ignore_case=True)

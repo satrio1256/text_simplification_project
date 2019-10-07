@@ -32,5 +32,5 @@ def tag_strings(path_to_model, tokenized_string):
     ct = CRFTagger()
     ct.set_model_file(path_to_model)
     tagged_strings = ct.tag_sents([tokenized_string])
-    print("Tagged Strings:", tagged_strings)
+    # print("Tagged Strings:", tagged_strings)
     return tagged_strings

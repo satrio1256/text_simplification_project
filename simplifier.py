@@ -59,15 +59,24 @@ def loadWord2Vec():
 def calculate(sv, wv):
     # Word to process
     # LEXICAL ONLY SIMPLIFICATION
-    # sentences = "Kandang adalah struktur atau bangunan tempat hewan ternak dipelihara. Kandang seringkali dikategorikan menurut jumlah hewan yang menempatinya; ada yang hanya berupa satu bangunan satu hewan, satu bangunan banyak hewan namun terpisah oleh sekat, dan satu bangunan diisi banyak hewan tanpa sekat."
+    sentences = "Kandang adalah struktur atau bangunan tempat hewan ternak dipelihara. Kandang seringkali dikategorikan menurut jumlah hewan yang menempatinya; ada yang hanya berupa satu bangunan satu hewan, satu bangunan banyak hewan namun terpisah sekat, dan satu bangunan diisi banyak hewan tanpa sekat. Kandang merupakan istilah umum dalam bahasa Indonesia, sedangkan bahasa Inggris memiliki banyak istilah yang seringkali dibedakan menurut jenis hewan yang dipelihara dan cara pemeliharaannya."
 
     # SYNTACTIC ONLY SIMPLIFICATION
-    sentences = "Rani anak orang kaya raya tetapi dia tidak sombong kepada orang lain. Heru menyeberang dengan sangat hati – hati di jalan raya lalu memesan taksi secara online."
+    # sentences = "Rani anak orang kaya raya tetapi dia tidak sombong kepada orang lain. Heru menyeberang dengan sangat hati – hati di jalan raya lalu memesan taksi secara online."
 
     # sentences = "Setelah berbincang-bincang dan membujuk kakaknya, pada akhirnya Hendra sang kakak dengan ikhlas untuk memberikan uang celengannya saat itu kepada adik tercinta."
 
     # LEXICAL - SYNTACTIC SIMPLIFICATION
-    sentences = "Pesta tersebut akhirnya ricuh dan Angel pun lari dan mengalami kecelakaan. Kecelakaan tersebut menyebabkan tak ada satu orang pun yang bisa menyelamatkan dirinya selain Hendra."
+    # sentences = "Pesta tersebut akhirnya ricuh dan Angel pun lari dan mengalami kecelakaan. Kecelakaan tersebut menyebabkan tak ada satu orang pun yang bisa menyelamatkan dirinya selain Hendra."
+
+    # Wikipedia Artikel
+    sentences = "Pluto adalah planet katai di sabuk Kuiper dan objek trans-Neptunus pertama yang ditemukan. Pluto merupakan planet katai terbesar dan bermassa terbesar kedua di Tata Surya dan benda terbesar kesembilan dan bermassa terbesar kesepuluh yang mengorbit Matahari secara langsung. Pluto ditemukan tahun 1930 dan awalnya dinyatakan sebagai planet kesembilan dari Matahari. Setelah 1992, status planetnya dipertanyakan setelah para astronom menemukan sabuk Kuiper, lingkaran objek di luar Neptunus yang mencakup Pluto dan benda-benda lainnya."
+
+    # sentences = "Meski Titanic mempunyai perlengkapan keamanan yang maju seperti kompartemen kedap air dan pintu kedap air yang bisa dioperasikan dari jarak jauh, kapal tersebut tidak memiliki sekoci yang cukup untuk menampung seluruh penumpang kapal. Karena regulasi keamanan laut yang sudah kuno, Titanic hanya mengangkut sekoci yang hanya mampu menampung 1.178 penumpang – sepertiga dari total penumpang dan awak kapalnya."
+
+    # sentences = "Lamut adalah sebuah tradisi berkisah yang berisi cerita tentang pesan dan nilai-nilai keagamaan, sosial dan budaya Banjar. Lamut merupakan seni cerita bertutur, seperti wayang atau cianjuran. Bedanya, wayang atau cianjuran dimainkan dengan seperangkat gamelan dan kecapi, sedangkan lamut dibawakan dengan terbang, alat tabuh untuk seni hadrah."
+
+    # sentences = "Kurban adalah suatu praktik yang banyak ditemukan dalam berbagai agama di dunia, yang biasanya dilakukan sebagai tanda kesediaan si pemeluknya untuk menyerahkan sesuatu kepada Tuhannya. Praktik pemberian kurban ditemukan dalam catatan-catatan manusia yang paling tua dan temuan-temuan arkeologis mencatat tulang-belulang manusia dan binatang yang menunjukkan tanda-tanda bahwa mereka telah dipersembahkan sebagai kurban dan praktik ini tampaknya telah dilakukan lama sebelum manusia mulai meninggalkan catatan tertulis."
 
     # LONG SENTENCES
     # sentences = "Perhelatan bisa kacau tanpa kehadiran lelaki itu. Gulai Kambing akan terasa hambar lantaran racikan bumbu tak meresap ke dalam daging. Kuah Gulai Kentang dan Gulai Rebung bakal encer karena keliru menakar jumlah kelapa parut hingga setiap menu masakan kekurangan santan. Akibatnya, berseraklah gunjing dan cela yang mesti ditanggung tuan rumah, bukan karena kenduri kurang meriah, tidak pula karena pelaminan tempat bersandingnya pasangan pengantin tak sedap dipandang mata, tapi karena macam-macam hidangan yang tersuguh tak menggugah selera. Nasi banyak gulai melimpah, tapi helat tak bikin kenyang. Ini celakanya bila Makaji, juru masak handal itu tak dilibatkan."
@@ -98,6 +107,9 @@ def calculate(sv, wv):
 
     rules = loadSyntactic()
     syntactic_simplified = ss.syntactic_simplify(lexical_simplified, path_tag_model, rules)
+    print()
+    print("=============== RESULT ===============")
+    print()
     print("Old:", sentences)
     print()
     print("Lexical Simplified:", lexical_simplified)
