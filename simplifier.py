@@ -6,6 +6,7 @@ import os
 import time
 import nltk
 from sensegram import sensegram
+import argparse
 
 # Prepare NLTK
 try:
@@ -56,48 +57,7 @@ def loadWord2Vec():
     print("Loading Word2Vec")
     return sensegram.SenseGram.load_word2vec_format(word_vectors_fpath, binary=False, unicode_errors='ignore')
 
-def calculate(sv, wv):
-    # Word to process
-    # LEXICAL ONLY SIMPLIFICATION
-    sentences = "Kandang adalah struktur atau bangunan tempat hewan ternak dipelihara. Kandang seringkali dikategorikan menurut jumlah hewan yang menempatinya; ada yang hanya berupa satu bangunan satu hewan, satu bangunan banyak hewan namun terpisah sekat, dan satu bangunan diisi banyak hewan tanpa sekat. Kandang merupakan istilah umum dalam bahasa Indonesia, sedangkan bahasa Inggris memiliki banyak istilah yang seringkali dibedakan menurut jenis hewan yang dipelihara dan cara pemeliharaannya."
-
-    # SYNTACTIC ONLY SIMPLIFICATION
-    # sentences = "Rani anak orang kaya raya tetapi dia tidak sombong kepada orang lain. Heru menyeberang dengan sangat hati – hati di jalan raya lalu memesan taksi secara online."
-
-    # sentences = "Setelah berbincang-bincang dan membujuk kakaknya, pada akhirnya Hendra sang kakak dengan ikhlas untuk memberikan uang celengannya saat itu kepada adik tercinta."
-
-    # LEXICAL - SYNTACTIC SIMPLIFICATION
-    # sentences = "Pesta tersebut akhirnya ricuh dan Angel pun lari dan mengalami kecelakaan. Kecelakaan tersebut menyebabkan tak ada satu orang pun yang bisa menyelamatkan dirinya selain Hendra."
-
-    # Wikipedia Artikel
-    sentences = "Pluto adalah planet katai di sabuk Kuiper dan objek trans-Neptunus pertama yang ditemukan. Pluto merupakan planet katai terbesar dan bermassa terbesar kedua di Tata Surya dan benda terbesar kesembilan dan bermassa terbesar kesepuluh yang mengorbit Matahari secara langsung. Pluto ditemukan tahun 1930 dan awalnya dinyatakan sebagai planet kesembilan dari Matahari. Setelah 1992, status planetnya dipertanyakan setelah para astronom menemukan sabuk Kuiper, lingkaran objek di luar Neptunus yang mencakup Pluto dan benda-benda lainnya."
-
-    # sentences = "Meski Titanic mempunyai perlengkapan keamanan yang maju seperti kompartemen kedap air dan pintu kedap air yang bisa dioperasikan dari jarak jauh, kapal tersebut tidak memiliki sekoci yang cukup untuk menampung seluruh penumpang kapal. Karena regulasi keamanan laut yang sudah kuno, Titanic hanya mengangkut sekoci yang hanya mampu menampung 1.178 penumpang – sepertiga dari total penumpang dan awak kapalnya."
-
-    # sentences = "Lamut adalah sebuah tradisi berkisah yang berisi cerita tentang pesan dan nilai-nilai keagamaan, sosial dan budaya Banjar. Lamut merupakan seni cerita bertutur, seperti wayang atau cianjuran. Bedanya, wayang atau cianjuran dimainkan dengan seperangkat gamelan dan kecapi, sedangkan lamut dibawakan dengan terbang, alat tabuh untuk seni hadrah."
-
-    # sentences = "Kurban adalah suatu praktik yang banyak ditemukan dalam berbagai agama di dunia, yang biasanya dilakukan sebagai tanda kesediaan si pemeluknya untuk menyerahkan sesuatu kepada Tuhannya. Praktik pemberian kurban ditemukan dalam catatan-catatan manusia yang paling tua dan temuan-temuan arkeologis mencatat tulang-belulang manusia dan binatang yang menunjukkan tanda-tanda bahwa mereka telah dipersembahkan sebagai kurban dan praktik ini tampaknya telah dilakukan lama sebelum manusia mulai meninggalkan catatan tertulis."
-
-    # LONG SENTENCES
-    # sentences = "Perhelatan bisa kacau tanpa kehadiran lelaki itu. Gulai Kambing akan terasa hambar lantaran racikan bumbu tak meresap ke dalam daging. Kuah Gulai Kentang dan Gulai Rebung bakal encer karena keliru menakar jumlah kelapa parut hingga setiap menu masakan kekurangan santan. Akibatnya, berseraklah gunjing dan cela yang mesti ditanggung tuan rumah, bukan karena kenduri kurang meriah, tidak pula karena pelaminan tempat bersandingnya pasangan pengantin tak sedap dipandang mata, tapi karena macam-macam hidangan yang tersuguh tak menggugah selera. Nasi banyak gulai melimpah, tapi helat tak bikin kenyang. Ini celakanya bila Makaji, juru masak handal itu tak dilibatkan."
-
-    # sentences = "Keterbukaan batik banyuwangi terhadap perwajahan baru, warna dan motif, menunjukkan watak orang Banyuwangi yang sangat percaya diri meramu aneka pengaruh untuk kemudian diakui sebagai identitas diri. Tabrak budaya ini juga terlihat pada ramuan kulinernya, seperti rawon malang dicampur dengan pecel madiun menjadi rawon pecel. Orang Banyuwangi sangat terbuka menerima budaya luar untuk diolah menjadi budaya Banyuwangi. Sinkretisme budaya yang juga tampak di batik banyuwangi ini menjadi sesuatu yang mutlak terjadi karena Banyuwangi hingga kini memang dihuni oleh beragam suku. Kedatangan beragam suku bangsa untuk tinggal menetap di Banyuwangi antara lain dimulai pada penjajahan Belanda. Belanda mendatangkan buruh perkebunan dari Jawa dan Madura."
-
-    # sentences = "Kalau beberapa tahun yang lalu Tuan datang ke kota  kelahiranku  dengan menumpang  bis, Tuan akan berhenti di dekat pasar. Melangkahlah menyusuri jalan raya arah ke barat maka kira-kira sekilometer dari  pasar akan sampailah Tuan di jalan kampungku. Pada simpang  kecil  ke kanan, beloklah  ke jalan sempit itu. Dan di  ujung  jalan itu nanti  Tuan  temukan sebuah  surau  tua. Di depannya  ada  kolam ikan  yang  airnya mengalir melalui empat buah pancuran mandi."
-
-    # sentences = "Begitulah pentingnya Makaji. Tanpa campur tangannya, kenduri terasa hambar, sehambar Gulai Kambing dan Gulai Rebung karena bumbu-bumbu tak diracik oleh tangan dingin lelaki itu. Sejak dulu, Makaji tak pernah keberatan membantu keluarga mana saja yang hendak menggelar pesta, tak peduli apakah tuan rumah hajatan itu orang terpandang yang tamunya membludak atau orang biasa yang hanya sanggup menggelar syukuran seadanya. Makaji tak pilih kasih, meski ia satu-satunya juru masak yang masih tersisa di Lareh Panjang. Di usia senja, ia masih tangguh menahan kantuk, tangannya tetap gesit meracik bumbu, masih kuat ia berjaga semalam suntuk."
-
-    # sentences = "Aldi sedang membaca buku di teras rumah ketika ibu memasak sayur"
-    # sentences = "Bandi memancing ikan di sungai bersama ayahnya dan keduanya pulang ke rumah hingga larut malam."
-    # sentences = "Irfan tidur saat pelajaran di kelas sedang berlangsung dan Toni membangunkannya."
-    # sentences = "Gilang makan gorengan di teras rumah sore tadi kemudian ayah ikut memakannya."
-    # sentences = "Heru menyeberang dengan sangat hati – hati di jalan raya lalu memesan taksi secara online"
-    # sentences = "Ia tertabrak mobil karena ia kurang hati-hati"
-    # sentences = "Jangan bercakap sembari makan"
-
-    # print(pt.tag_strings(path_tag_model, ss.tokenize_strings(sentences)))
-    # raise Exception
-
+def calculate(sv, wv, sentences = ""):
     lexical_simplified = ls.lexical_simplify(sv_model=sv,
                                         wv_model=wv,
                                         word_freq_model=path_word_frequency_tsv,
@@ -120,51 +80,13 @@ def calculate(sv, wv):
 def trainPOSTag():
     pt.train_pos_tag(path_postag_dataset, path_tag_model)
 
-
 if __name__ == "__main__":
-    exit(0)
-    # Train Word Frequency
-    # trainLexical()
-
-    # Load Sense Vectors
-    # loadSense()
-
-    # Load Word2Vec
-    # loadWord2Vec()
-
-    # Run to count word frequency
-    # trainLexical()
-
-    # Train POS Tagger
-    # trainPOSTag()
-
-    # Word2Vec Get Similar
-    # word = "asam"
-    # print(wv.similar_by_word(word, 10))
-
-    # Sensegram
-    # words = ['asam']
-    # context = "Asam deoksiribonukleat, lebih dikenal dengan singkatan DNA (bahasa Inggris: 'deoxyribonucleic acid'), adalah sejenis biomolekul yang menyimpan dan menyandi instruksi-instruksi genetika setiap organisme dan banyak jenis virus. Instruksi-instruksi genetika ini berperan penting dalam pertumbuhan, perkembangan, dan fungsi organisme dan virus. DNA merupakan asam nukleat; bersamaan dengan protein dan karbohidrat, asam nukleat adalah makromolekul esensial bagi seluruh makhluk hidup yang diketahui. Kebanyakan molekul DNA terdiri dari dua unting biopolimer yang berpilin satu sama lainnya membentuk heliks ganda. Dua unting DNA ini dikenal sebagai polinukleotida karena keduanya terdiri dari satuan-satuan molekul yang disebut nukleotida. Tiap-tiap nukleotida terdiri atas salah satu jenis basa nitrogen (guanina (G), adenina (A), timina (T), atau sitosina (C)), gula monosakarida yang disebut deoksiribosa, dan gugus fosfat. Nukleotida-nukelotida ini kemudian tersambung dalam satu rantai ikatan kovalen antara gula satu nukleotida dengan fosfat nukelotida lainnya. Hasilnya adalah rantai punggung gula-fosfat yang berselang-seling. Menurut kaidah pasangan basa (A dengan T dan C dengan G), ikatan hidrogen mengikat basa-basa dari kedua unting polinukleotida membentuk DNA unting ganda"
-
-    # print("Probabilities of the senses:\n{}\n\n".format(sv.get_senses(word, ignore_case=True)))
-    #
-    # for sense_id, prob in sv.get_senses(word, ignore_case=True):
-    #     print(sense_id)
-    #     print("=" * 20)
-    #     for rsense_id, sim in sv.wv.most_similar(sense_id):
-    #         print("{} {:f}".format(rsense_id, sim))
-    #     print("\n")
-    #
-    # # Disambiguate a word in a context
-    # wsd_model = WSD(sv, wv, window=5, max_context_words=3, method='sim', ignore_case=True)
-    # print(wsd_model.disambiguate(context, word))
-
-    #
-    # pt.train_pos_tag(path_postag_dataset, path_tag_model)
-    # print(pt.tag_strings(path_tag_model, tokenized_string=['']))
-    # XXX
-    # parser = argparse.ArgumentParser("Text Simplifier")
-    # parser.add_argument("--txt", help="String yang akan disederhanakan", type=str)
-    # parser.add_argument("--dir", help="Directory file yang ingin disederhanakan", type=str)
-    # args = parser.parse_args()
-    # print(args)
+    parser = argparse.ArgumentParser("Text Simplifier")
+    parser.add_argument("--text", help="String yang akan disederhanakan", type=str)
+    args = parser.parse_args()
+    if args.text == "":
+        print("Text cannot be empty")
+    else:
+        sv = loadSense()
+        wv = loadWord2Vec()
+        calculate(sv, wv, args.text)
