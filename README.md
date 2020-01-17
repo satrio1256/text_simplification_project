@@ -34,4 +34,16 @@ python simplifier.py --text "String to simplify"
 ```
 
 ## References
-Will be added later
+If you use this codes in your projects or research, please cite the following paper:
+
+```
+@inproceedings{wibowo_romadhony_sa'adah,
+  author       = {Wibowo, Muhammad Satrio  and  Romadhony, Ade  and  Sa'adah, Siti},
+  title        = {Lexical and Syntactic Simplification for Indonesian Text},
+  month        = {December},
+  year         = {2019},
+  booktitle    = {The 2nd International Seminar on Research of Information Technology and Intelligent Systems 2019},
+  publisher    = {Institute of Electrical and Electronics Engineers},
+  pages        = {64-68},
+}
+```
